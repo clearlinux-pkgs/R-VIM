@@ -4,26 +4,24 @@
 #
 Name     : R-VIM
 Version  : 4.8.0
-Release  : 16
+Release  : 17
 URL      : https://cran.r-project.org/src/contrib/VIM_4.8.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/VIM_4.8.0.tar.gz
 Summary  : Visualization and Imputation of Missing Values
 Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-VIM-lib = %{version}-%{release}
-Requires: R-colorspace
-Requires: R-data.table
-Requires: R-e1071
-Requires: R-laeken
-Requires: R-ranger
-Requires: R-robustbase
-Requires: R-sp
-Requires: R-vcd
+Requires: R-abind
+Requires: R-carData
+Requires: R-rio
+BuildRequires : R-abind
+BuildRequires : R-carData
 BuildRequires : R-colorspace
 BuildRequires : R-data.table
 BuildRequires : R-e1071
 BuildRequires : R-laeken
 BuildRequires : R-ranger
+BuildRequires : R-rio
 BuildRequires : R-robustbase
 BuildRequires : R-sp
 BuildRequires : R-vcd
@@ -51,10 +49,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1549911764
+export SOURCE_DATE_EPOCH=1552839244
 
 %install
-export SOURCE_DATE_EPOCH=1549911764
+export SOURCE_DATE_EPOCH=1552839244
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -90,8 +88,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library VIM|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  VIM || :
 
 
 %files
@@ -121,7 +118,15 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/VIM/help/paths.rds
 /usr/lib64/R/library/VIM/html/00Index.html
 /usr/lib64/R/library/VIM/html/R.css
-/usr/lib64/R/library/VIM/libs/symbols.rds
+/usr/lib64/R/library/VIM/tests/testthat.R
+/usr/lib64/R/library/VIM/tests/testthat/Rplots.pdf
+/usr/lib64/R/library/VIM/tests/testthat/test_IRMI_ordered.R
+/usr/lib64/R/library/VIM/tests/testthat/test_data_frame.R
+/usr/lib64/R/library/VIM/tests/testthat/test_gowerDind.R
+/usr/lib64/R/library/VIM/tests/testthat/test_graphics.R
+/usr/lib64/R/library/VIM/tests/testthat/test_hotdeck.R
+/usr/lib64/R/library/VIM/tests/testthat/test_impNA.R
+/usr/lib64/R/library/VIM/tests/testthat/test_kNN.R
 
 %files lib
 %defattr(-,root,root,-)

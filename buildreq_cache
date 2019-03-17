@@ -1,9 +1,12 @@
 4.8.0
+R-abind
+R-carData
 R-colorspace
 R-data.table
 R-e1071
 R-laeken
 R-ranger
+R-rio
 R-robustbase
 R-sp
 R-vcd
