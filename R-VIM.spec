@@ -4,27 +4,38 @@
 #
 Name     : R-VIM
 Version  : 4.8.0
-Release  : 18
+Release  : 19
 URL      : https://cran.r-project.org/src/contrib/VIM_4.8.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/VIM_4.8.0.tar.gz
 Summary  : Visualization and Imputation of Missing Values
 Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-VIM-lib = %{version}-%{release}
-Requires: R-abind
-Requires: R-carData
-Requires: R-rio
+Requires: R-DEoptimR
+Requires: R-car
+Requires: R-cellranger
+Requires: R-forcats
+Requires: R-hms
+Requires: R-lmtest
+Requires: R-zip
+BuildRequires : R-DEoptimR
 BuildRequires : R-abind
+BuildRequires : R-car
 BuildRequires : R-carData
+BuildRequires : R-cellranger
 BuildRequires : R-colorspace
 BuildRequires : R-data.table
 BuildRequires : R-e1071
+BuildRequires : R-forcats
+BuildRequires : R-hms
 BuildRequires : R-laeken
+BuildRequires : R-lmtest
 BuildRequires : R-ranger
 BuildRequires : R-rio
 BuildRequires : R-robustbase
 BuildRequires : R-sp
 BuildRequires : R-vcd
+BuildRequires : R-zip
 BuildRequires : buildreq-R
 
 %description
@@ -49,10 +60,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552839244
+export SOURCE_DATE_EPOCH=1552920819
 
 %install
-export SOURCE_DATE_EPOCH=1552839244
+export SOURCE_DATE_EPOCH=1552920819
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
