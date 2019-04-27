@@ -4,7 +4,7 @@
 #
 Name     : R-VIM
 Version  : 4.8.0
-Release  : 20
+Release  : 21
 URL      : https://cran.r-project.org/src/contrib/VIM_4.8.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/VIM_4.8.0.tar.gz
 Summary  : Visualization and Imputation of Missing Values
