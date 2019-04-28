@@ -4,7 +4,7 @@
 #
 Name     : R-VIM
 Version  : 4.8.0
-Release  : 23
+Release  : 24
 URL      : https://cran.r-project.org/src/contrib/VIM_4.8.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/VIM_4.8.0.tar.gz
 Summary  : Visualization and Imputation of Missing Values
@@ -53,10 +53,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1556470646
+export SOURCE_DATE_EPOCH=1556484652
 
 %install
-export SOURCE_DATE_EPOCH=1556470646
+export SOURCE_DATE_EPOCH=1556484652
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
