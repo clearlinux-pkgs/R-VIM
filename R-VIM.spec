@@ -4,38 +4,44 @@
 #
 Name     : R-VIM
 Version  : 4.8.0
-Release  : 26
+Release  : 27
 URL      : https://cran.r-project.org/src/contrib/VIM_4.8.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/VIM_4.8.0.tar.gz
 Summary  : Visualization and Imputation of Missing Values
 Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-VIM-lib = %{version}-%{release}
-BuildRequires : R-DEoptimR
-BuildRequires : R-abind
+Requires: R-Rcpp
+Requires: R-car
+Requires: R-colorspace
+Requires: R-data.table
+Requires: R-e1071
+Requires: R-laeken
+Requires: R-ranger
+Requires: R-robustbase
+Requires: R-sp
+Requires: R-vcd
+BuildRequires : R-Rcpp
 BuildRequires : R-car
-BuildRequires : R-carData
-BuildRequires : R-cellranger
 BuildRequires : R-colorspace
 BuildRequires : R-data.table
 BuildRequires : R-e1071
-BuildRequires : R-forcats
-BuildRequires : R-hms
 BuildRequires : R-laeken
-BuildRequires : R-lmtest
 BuildRequires : R-ranger
-BuildRequires : R-rio
 BuildRequires : R-robustbase
 BuildRequires : R-sp
 BuildRequires : R-vcd
-BuildRequires : R-zip
 BuildRequires : buildreq-R
 
 %description
-[![Coverage Status](https://coveralls.io/repos/github/statistikat/VIM/badge.svg?branch=master)](https://coveralls.io/github/statistikat/VIM?branch=master)
-[![CRAN](http://www.r-pkg.org/badges/version/VIM)](https://CRAN.R-project.org/package=VIM)
-[![Downloads](http://cranlogs.r-pkg.org/badges/VIM)](https://CRAN.R-project.org/package=VIM)
-[![Mentioned in Awesome Official Statistics ](https://awesome.re/mentioned-badge.svg)](http://www.awesomeofficialstatistics.org)
+are introduced, which can be used for exploring the data and the structure of
+    the missing and/or imputed values. Depending on this structure of the missing
+    values, the corresponding methods may help to identify the mechanism generating
+    the missing values and allows to explore the data including missing values.
+    In addition, the quality of imputation can be visually explored using various
+    univariate, bivariate, multiple and multivariate plot methods. A graphical user
+    interface available in the separate package VIMGUI allows an easy handling of
+    the implemented plot methods.
 
 %package lib
 Summary: lib components for the R-VIM package.
@@ -52,13 +58,13 @@ lib components for the R-VIM package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1556484652
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1569296038
 
 %install
-export SOURCE_DATE_EPOCH=1556484652
+export SOURCE_DATE_EPOCH=1569296038
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -87,7 +93,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
