@@ -4,7 +4,7 @@
 #
 Name     : R-VIM
 Version  : 5.1.1
-Release  : 30
+Release  : 31
 URL      : https://cran.r-project.org/src/contrib/VIM_5.1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/VIM_5.1.1.tar.gz
 Summary  : Visualization and Imputation of Missing Values
