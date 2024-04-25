@@ -4,7 +4,7 @@
 #
 Name     : R-VIM
 Version  : 6.2.2
-Release  : 59
+Release  : 60
 URL      : https://cran.r-project.org/src/contrib/VIM_6.2.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/VIM_6.2.2.tar.gz
 Summary  : Visualization and Imputation of Missing Values
